@@ -24,8 +24,8 @@ const postString = (string) => {
 
   return fetch(url, options)
     .then(response => response.json())
-    .then(result => { console.log(result) })
-    .catch(error => console.error({ error }))
+    .then(result => { addWordFeedback(result.message) })
+    .catch(error => { addWordFeedback({ error })})
 }
 
 const renderTopWord = (apiResponse) => {
@@ -36,14 +36,21 @@ const renderTopWord = (apiResponse) => {
   $("#top-word-count").text(count)
 }
 
-const submitString = () => {
+async function submitString() {
   let wordArray = parseString($("#word-text-area").val())
   wordArray.forEach(word => {
     postString(word);
   })
+  await addWordFeedback($("#word-text-area").val());
+  $("#word-text-area").val("");
+  getTopWord();
 }
 
 const parseString = (string) => {
   let words = string.replace(/[^\w\s]/gi, '');
   return words.trim().split(' ');
+}
+
+const addWordFeedback = (string) => {
+  $("#add-word-feedback").text(string)
 }

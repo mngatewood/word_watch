@@ -67,6 +67,11 @@ main {
         background-color: $indigo;
       }
     }
+    h4 {
+      margin: 20px;
+      max-height: 100px;
+      overflow: scroll;
+    }
   }
   .word-data {
     width: 65%;
