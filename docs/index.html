@@ -9,15 +9,18 @@
     <main>
       <section class="text-submission">
         <h2 tabindex="0">Word <span>Watch</span> 👀</h2>
-        <textarea placeholder="Paste text here"></textarea>
-        <button>Break down</button>
+        <textarea placeholder="Paste text here" id="word-text-area"></textarea>
+        <button id="break-down">Break down</button>
       </section>
 
       <section class="word-data" tabindex="0">
         <article class="top-word">
           <h3>Top word from Word Watch API: </h3>
+          <h3 id="top-word-value"></h3>
         </article>
         <article class="word-count" tabindex="0">
+          <h4 id="word-count-heading">Count:&nbsp;</h4>
+          <h4 id="top-word-count"></h4>
         </article>
       </section>
     </main>
