@@ -73,12 +73,16 @@ main {
     background-color: #ddd;
     .top-word {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: space-evenly;
       border-bottom: 2px solid $indigo;
       height: 8vh;
       color: $salmon;
       padding: 10px;
+      margin: 20px;
+      #top-word-value {
+        color: #4B0082
+      }
     }
     .word-count {
       display: flex;
